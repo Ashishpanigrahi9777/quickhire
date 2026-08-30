@@ -25,6 +25,20 @@ class Application(Base):
     location: Mapped[str] = mapped_column(String(100), nullable=False)
     applied_date: Mapped[date] = mapped_column(nullable=False)
     status: Mapped[str] = mapped_column(String(50), nullable=False, default="Applied")
+    priority: Mapped[str] = mapped_column(String(50), nullable=False, default="Medium")
     notes: Mapped[str | None] = mapped_column(Text, nullable=True)
 
     user: Mapped["User"] = relationship("User", back_populates="applications")
+    history: Mapped[list["ApplicationHistory"]] = relationship("ApplicationHistory", back_populates="application", cascade="all, delete-orphan", order_by="desc(ApplicationHistory.changed_at)")
+
+
+class ApplicationHistory(Base):
+    __tablename__ = "application_history"
+
+    id: Mapped[int] = mapped_column(primary_key=True, index=True, autoincrement=True)
+    application_id: Mapped[int] = mapped_column(ForeignKey("applications.id", ondelete="CASCADE"), nullable=False)
+    old_status: Mapped[str | None] = mapped_column(String(50), nullable=True)
+    new_status: Mapped[str] = mapped_column(String(50), nullable=False)
+    changed_at: Mapped[datetime] = mapped_column(DateTime(timezone=True), server_default=func.now())
+
+    application: Mapped["Application"] = relationship("Application", back_populates="history")

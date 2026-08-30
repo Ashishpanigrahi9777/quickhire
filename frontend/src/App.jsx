@@ -9,8 +9,10 @@ import ApplicationDetails from './pages/ApplicationDetails';
 import Login from './pages/Login';
 import Signup from './pages/Signup';
 import { AuthProvider } from './context/AuthContext';
+import { ThemeProvider } from './context/ThemeContext';
 import ProtectedRoute from './components/ProtectedRoute';
 import PublicRoute from './components/PublicRoute';
+import AnimatedBackground from './components/AnimatedBackground';
 
 const MobileMenuContext = createContext();
 
@@ -21,9 +23,9 @@ function Layout() {
 
   return (
     <MobileMenuContext.Provider value={{ isMobileMenuOpen, setIsMobileMenuOpen }}>
-      <div className="flex h-screen w-full bg-background overflow-hidden">
+      <div className="flex h-screen w-full overflow-hidden relative">
         <Sidebar />
-        <div className="flex flex-1 flex-col min-w-0 overflow-hidden">
+        <div className="flex flex-1 flex-col min-w-0 overflow-hidden relative z-10">
           <Header />
           <main className="flex-1 overflow-y-auto overflow-x-hidden p-4 md:p-6 lg:p-8">
             <div className="mx-auto max-w-6xl">
@@ -38,43 +40,47 @@ function Layout() {
 
 function App() {
   return (
-    <AuthProvider>
-      <BrowserRouter>
-        <Toaster 
-          position="top-right"
-          toastOptions={{
-            style: {
-              background: '#fff',
-              color: '#0f172a',
-              boxShadow: '0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1)',
-              borderRadius: '0.75rem',
-              border: '1px solid #e2e8f0',
-              fontSize: '0.875rem',
-            },
-            success: {
-              iconTheme: {
-                primary: '#4f46e5',
-                secondary: '#fff',
+    <ThemeProvider>
+      <AuthProvider>
+        <BrowserRouter>
+          <AnimatedBackground />
+          <Toaster 
+            position="top-right"
+            toastOptions={{
+              className: 'dark:bg-slate-800 dark:text-slate-100 dark:border-slate-700',
+              style: {
+                background: 'var(--bg-card)',
+                color: 'var(--text-primary)',
+                boxShadow: '0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1)',
+                borderRadius: '0.75rem',
+                border: '1px solid var(--color-border)',
+                fontSize: '0.875rem',
               },
-            },
-          }}
-        />
-        <Routes>
-          <Route element={<PublicRoute />}>
-            <Route path="/login" element={<Login />} />
-            <Route path="/signup" element={<Signup />} />
-          </Route>
-          
-          <Route element={<ProtectedRoute />}>
-            <Route element={<Layout />}>
-              <Route path="/" element={<Dashboard />} />
-              <Route path="/applications" element={<Applications />} />
-              <Route path="/applications/:id" element={<ApplicationDetails />} />
+              success: {
+                iconTheme: {
+                  primary: 'var(--color-accent)',
+                  secondary: '#fff',
+                },
+              },
+            }}
+          />
+          <Routes>
+            <Route element={<PublicRoute />}>
+              <Route path="/login" element={<Login />} />
+              <Route path="/signup" element={<Signup />} />
             </Route>
-          </Route>
-        </Routes>
-      </BrowserRouter>
-    </AuthProvider>
+            
+            <Route element={<ProtectedRoute />}>
+              <Route element={<Layout />}>
+                <Route path="/" element={<Dashboard />} />
+                <Route path="/applications" element={<Applications />} />
+                <Route path="/applications/:id" element={<ApplicationDetails />} />
+              </Route>
+            </Route>
+          </Routes>
+        </BrowserRouter>
+      </AuthProvider>
+    </ThemeProvider>
   );
 }
 

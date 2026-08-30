@@ -5,8 +5,42 @@
 @tailwind utilities;
 
 @layer base {
+  :root {
+    --bg-background: #F8FAFC; /* Slate 50 */
+    --bg-card: #FFFFFF;
+    --color-primary: #0F172A; /* Slate 900 */
+    --color-primary-hover: #1E293B; /* Slate 800 */
+    --color-primary-light: #F1F5F9; /* Slate 100 */
+    --color-accent: #4F46E5; /* Indigo 600 */
+    --color-accent-hover: #4338CA; /* Indigo 700 */
+    --text-primary: #0F172A; /* Slate 900 */
+    --text-secondary: #475569; /* Slate 600 */
+    --text-muted: #94A3B8; /* Slate 400 */
+    --color-border: #E2E8F0; /* Slate 200 */
+  }
+
+  .dark {
+    --bg-background: #09090B; /* Zinc 950 */
+    --bg-card: rgba(24, 24, 27, 0.7); /* Zinc 900 */
+    --color-primary: #FFFFFF;
+    --color-primary-hover: #F4F4F5; /* Zinc 100 */
+    --color-primary-light: rgba(255, 255, 255, 0.1);
+    --color-accent: #6366F1; /* Indigo 500 */
+    --color-accent-hover: #818CF8; /* Indigo 400 */
+    --text-primary: #F8FAFC; /* Slate 50 */
+    --text-secondary: #94A3B8; /* Slate 400 */
+    --text-muted: #64748B; /* Slate 500 */
+    --color-border: rgba(255, 255, 255, 0.1);
+  }
+
   body {
-    @apply bg-background text-text-primary antialiased;
+    @apply text-text-primary antialiased bg-background transition-colors duration-300;
+  }
+}
+
+@layer utilities {
+  .glass-card {
+    @apply bg-card backdrop-blur-xl border border-border/60 shadow-glass transition-colors duration-300;
   }
 }
 
