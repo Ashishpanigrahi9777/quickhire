@@ -28,7 +28,7 @@ export default function Sidebar() {
       {/* Sidebar */}
       <div 
         className={cn(
-          "fixed inset-y-0 left-0 z-50 flex h-full w-64 flex-col border-r border-border bg-white/80 backdrop-blur-xl transition-transform duration-300 ease-in-out md:static md:translate-x-0",
+          "fixed inset-y-0 left-0 z-50 flex h-full w-64 flex-col border-r border-border bg-white/80 dark:bg-slate-900/90 backdrop-blur-xl transition-transform duration-300 ease-in-out md:static md:translate-x-0",
           isMobileMenuOpen ? "translate-x-0" : "-translate-x-full"
         )}
       >
@@ -59,8 +59,8 @@ export default function Sidebar() {
                 className={cn(
                   "group relative flex items-center gap-3 rounded-lg px-3 py-2 text-sm font-medium transition-all duration-200 overflow-hidden",
                   isActive
-                    ? "text-primary bg-primary/5"
-                    : "text-text-secondary hover:bg-slate-50 hover:text-primary hover:translate-x-1"
+                    ? "text-primary bg-primary/5 dark:bg-slate-800"
+                    : "text-text-secondary hover:bg-slate-50 dark:hover:bg-slate-800/80 hover:text-primary hover:translate-x-1"
                 )}
               >
                 {isActive && (

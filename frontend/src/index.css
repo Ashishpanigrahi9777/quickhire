@@ -7,7 +7,10 @@
 @layer base {
   :root {
     --bg-background: #F8FAFC; /* Slate 50 */
+    --bg-secondary: #F1F5F9; /* Slate 100 */
     --bg-card: #FFFFFF;
+    --bg-elevated: #FFFFFF;
+    --bg-input: #F1F5F9; /* Slate 100 */
     --color-primary: #0F172A; /* Slate 900 */
     --color-primary-hover: #1E293B; /* Slate 800 */
     --color-primary-light: #F1F5F9; /* Slate 100 */
@@ -16,21 +19,28 @@
     --text-primary: #0F172A; /* Slate 900 */
     --text-secondary: #475569; /* Slate 600 */
     --text-muted: #94A3B8; /* Slate 400 */
+    --text-disabled: #CBD5E1; /* Slate 300 */
     --color-border: #E2E8F0; /* Slate 200 */
+    --color-border-strong: #CBD5E1; /* Slate 300 */
   }
 
   .dark {
-    --bg-background: #09090B; /* Zinc 950 */
-    --bg-card: rgba(24, 24, 27, 0.7); /* Zinc 900 */
-    --color-primary: #FFFFFF;
-    --color-primary-hover: #F4F4F5; /* Zinc 100 */
-    --color-primary-light: rgba(255, 255, 255, 0.1);
+    --bg-background: #0B0F19; /* Dark navy - page background */
+    --bg-secondary: #111827; /* Secondary surface */
+    --bg-card: #151B2B; /* Card background */
+    --bg-elevated: #1B2335; /* Elevated card */
+    --bg-input: #0F172A; /* Input background */
+    --color-primary: #F8FAFC; /* Slate 50 - primary text/button text */
+    --color-primary-hover: #E2E8F0; /* Slate 200 - hover text */
+    --color-primary-light: rgba(248, 250, 252, 0.1);
     --color-accent: #6366F1; /* Indigo 500 */
     --color-accent-hover: #818CF8; /* Indigo 400 */
     --text-primary: #F8FAFC; /* Slate 50 */
-    --text-secondary: #94A3B8; /* Slate 400 */
-    --text-muted: #64748B; /* Slate 500 */
-    --color-border: rgba(255, 255, 255, 0.1);
+    --text-secondary: #CBD5E1; /* Slate 300 */
+    --text-muted: #94A3B8; /* Slate 400 */
+    --text-disabled: #64748B; /* Slate 500 */
+    --color-border: #273449; /* Strong dark border */
+    --color-border-strong: #334155; /* Stronger dark border */
   }
 
   body {
@@ -61,4 +71,12 @@
 
 ::-webkit-scrollbar-thumb:hover {
   background: #94a3b8; 
+}
+
+.dark ::-webkit-scrollbar-thumb {
+  background: #475569;
+}
+
+.dark ::-webkit-scrollbar-thumb:hover {
+  background: #64748B;
 }

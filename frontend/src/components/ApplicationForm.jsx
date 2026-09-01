@@ -50,11 +50,11 @@ export default function ApplicationForm({ isOpen, onClose, onSubmit, initialData
   return (
     <div 
       className={`fixed inset-0 z-50 flex items-center justify-center transition-all duration-300 ease-out p-4 ${
-        isOpen ? "opacity-100 bg-slate-900/60 backdrop-blur-sm" : "opacity-0 pointer-events-none"
+        isOpen ? "opacity-100 bg-slate-900/60 dark:bg-slate-950/70 backdrop-blur-sm" : "opacity-0 pointer-events-none"
       }`}
     >
       <div 
-        className={`w-full max-w-lg rounded-2xl bg-card border border-border/60 p-6 md:p-8 shadow-2xl transition-all duration-300 ease-out ${
+        className={`w-full max-w-lg rounded-2xl bg-card dark:bg-slate-800 border border-border dark:border-border/70 p-6 md:p-8 shadow-2xl transition-all duration-300 ease-out ${
           isOpen ? "scale-100 translate-y-0" : "scale-95 translate-y-4"
         }`}
       >
@@ -86,7 +86,7 @@ export default function ApplicationForm({ isOpen, onClose, onSubmit, initialData
                 name="company"
                 value={formData.company}
                 onChange={handleChange}
-                className="w-full rounded-xl border border-border bg-background px-4 py-2.5 text-sm font-medium text-text-primary transition-all duration-200 hover:border-primary/30 focus:border-primary focus:bg-card focus:outline-none focus:ring-4 focus:ring-primary/10 shadow-sm"
+                className="w-full rounded-xl border border-border bg-background dark:bg-slate-800 px-4 py-2.5 text-sm font-medium text-text-primary transition-all duration-200 hover:border-primary/30 focus:border-primary focus:bg-card dark:focus:bg-slate-900 focus:outline-none focus:ring-4 focus:ring-primary/20 shadow-sm"
                 placeholder="Google"
               />
             </div>
@@ -98,7 +98,7 @@ export default function ApplicationForm({ isOpen, onClose, onSubmit, initialData
                 name="position"
                 value={formData.position}
                 onChange={handleChange}
-                className="w-full rounded-xl border border-border bg-background px-4 py-2.5 text-sm font-medium text-text-primary transition-all duration-200 hover:border-primary/30 focus:border-primary focus:bg-card focus:outline-none focus:ring-4 focus:ring-primary/10 shadow-sm"
+                className="w-full rounded-xl border border-border bg-background dark:bg-slate-800 px-4 py-2.5 text-sm font-medium text-text-primary transition-all duration-200 hover:border-primary/30 focus:border-primary focus:bg-card dark:focus:bg-slate-900 focus:outline-none focus:ring-4 focus:ring-primary/20 shadow-sm"
                 placeholder="Software Engineer"
               />
             </div>
@@ -113,7 +113,7 @@ export default function ApplicationForm({ isOpen, onClose, onSubmit, initialData
                 name="location"
                 value={formData.location}
                 onChange={handleChange}
-                className="w-full rounded-xl border border-border bg-background px-4 py-2.5 text-sm font-medium text-text-primary transition-all duration-200 hover:border-primary/30 focus:border-primary focus:bg-card focus:outline-none focus:ring-4 focus:ring-primary/10 shadow-sm"
+                className="w-full rounded-xl border border-border bg-background dark:bg-slate-800 px-4 py-2.5 text-sm font-medium text-text-primary transition-all duration-200 hover:border-primary/30 focus:border-primary focus:bg-card dark:focus:bg-slate-900 focus:outline-none focus:ring-4 focus:ring-primary/20 shadow-sm"
                 placeholder="San Francisco, CA"
               />
             </div>
@@ -125,7 +125,7 @@ export default function ApplicationForm({ isOpen, onClose, onSubmit, initialData
                 name="applied_date"
                 value={formData.applied_date}
                 onChange={handleChange}
-                className="w-full rounded-xl border border-border bg-background px-4 py-2.5 text-sm font-medium text-text-primary transition-all duration-200 hover:border-primary/30 focus:border-primary focus:bg-card focus:outline-none focus:ring-4 focus:ring-primary/10 shadow-sm"
+                className="w-full rounded-xl border border-border bg-background dark:bg-slate-800 px-4 py-2.5 text-sm font-medium text-text-primary transition-all duration-200 hover:border-primary/30 focus:border-primary focus:bg-card dark:focus:bg-slate-900 focus:outline-none focus:ring-4 focus:ring-primary/20 shadow-sm"
               />
             </div>
           </div>
@@ -137,7 +137,7 @@ export default function ApplicationForm({ isOpen, onClose, onSubmit, initialData
                 name="status"
                 value={formData.status}
                 onChange={handleChange}
-                className="w-full rounded-xl border border-border bg-background px-4 py-2.5 text-sm font-medium text-text-primary transition-all duration-200 hover:border-primary/30 focus:border-primary focus:bg-card focus:outline-none focus:ring-4 focus:ring-primary/10 shadow-sm appearance-none bg-[url('data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22292.4%22%20height%3D%22292.4%22%3E%3Cpath%20fill%3D%22%2364748B%22%20d%3D%22M287%2069.4a17.6%2017.6%200%200%200-13-5.4H18.4c-5%200-9.3%201.8-12.9%205.4A17.6%2017.6%200%200%200%200%2082.2c0%205%201.8%209.3%205.4%2012.9l128%20127.9c3.6%203.6%207.8%205.4%2012.8%205.4s9.2-1.8%2012.8-5.4L287%2095c3.5-3.5%205.4-7.8%205.4-12.8%200-5-1.9-9.2-5.5-12.8z%22%2F%3E%3C%2Fsvg%3E')] bg-[length:10px_10px] bg-no-repeat bg-[position:right_1rem_center]"
+                className="w-full rounded-xl border border-border bg-background dark:bg-slate-800 px-4 py-2.5 text-sm font-medium text-text-primary transition-all duration-200 hover:border-primary/30 focus:border-primary focus:bg-card dark:focus:bg-slate-900 focus:outline-none focus:ring-4 focus:ring-primary/20 shadow-sm appearance-none bg-[url('data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22292.4%22%20height%3D%22292.4%22%3E%3Cpath%20fill%3D%22%2364748B%22%20d%3D%22M287%2069.4a17.6%2017.6%200%200%200-13-5.4H18.4c-5%200-9.3%201.8-12.9%205.4A17.6%2017.6%200%200%200%200%2082.2c0%205%201.8%209.3%205.4%2012.9l128%20127.9c3.6%203.6%207.8%205.4%2012.8%205.4s9.2-1.8%2012.8-5.4L287%2095c3.5-3.5%205.4-7.8%205.4-12.8%200-5-1.9-9.2-5.5-12.8z%22%2F%3E%3C%2Fsvg%3E')] dark:bg-[url('data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22292.4%22%20height%3D%22292.4%22%3E%3Cpath%20fill%3D%22%23CBD5E1%22%20d%3D%22M287%2069.4a17.6%2017.6%200%200%200-13-5.4H18.4c-5%200-9.3%201.8-12.9%205.4A17.6%2017.6%200%200%200%200%2082.2c0%205%201.8%209.3%205.4%2012.9l128%20127.9c3.6%203.6%207.8%205.4%2012.8%205.4s9.2-1.8%2012.8-5.4L287%2095c3.5-3.5%205.4-7.8%205.4-12.8%200-5-1.9-9.2-5.5-12.8z%22%2F%3E%3C%2Fsvg%3E')] bg-[length:10px_10px] bg-no-repeat bg-[position:right_1rem_center]"
               >
                 <option value="Applied">Applied</option>
                 <option value="Assessment">Assessment</option>
@@ -152,7 +152,7 @@ export default function ApplicationForm({ isOpen, onClose, onSubmit, initialData
                 name="priority"
                 value={formData.priority}
                 onChange={handleChange}
-                className="w-full rounded-xl border border-border bg-background px-4 py-2.5 text-sm font-medium text-text-primary transition-all duration-200 hover:border-primary/30 focus:border-primary focus:bg-card focus:outline-none focus:ring-4 focus:ring-primary/10 shadow-sm appearance-none bg-[url('data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22292.4%22%20height%3D%22292.4%22%3E%3Cpath%20fill%3D%22%2364748B%22%20d%3D%22M287%2069.4a17.6%2017.6%200%200%200-13-5.4H18.4c-5%200-9.3%201.8-12.9%205.4A17.6%2017.6%200%200%200%200%2082.2c0%205%201.8%209.3%205.4%2012.9l128%20127.9c3.6%203.6%207.8%205.4%2012.8%205.4s9.2-1.8%2012.8-5.4L287%2095c3.5-3.5%205.4-7.8%205.4-12.8%200-5-1.9-9.2-5.5-12.8z%22%2F%3E%3C%2Fsvg%3E')] bg-[length:10px_10px] bg-no-repeat bg-[position:right_1rem_center]"
+                className="w-full rounded-xl border border-border bg-background dark:bg-slate-800 px-4 py-2.5 text-sm font-medium text-text-primary transition-all duration-200 hover:border-primary/30 focus:border-primary focus:bg-card dark:focus:bg-slate-900 focus:outline-none focus:ring-4 focus:ring-primary/20 shadow-sm appearance-none bg-[url('data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22292.4%22%20height%3D%22292.4%22%3E%3Cpath%20fill%3D%22%2364748B%22%20d%3D%22M287%2069.4a17.6%2017.6%200%200%200-13-5.4H18.4c-5%200-9.3%201.8-12.9%205.4A17.6%2017.6%200%200%200%200%2082.2c0%205%201.8%209.3%205.4%2012.9l128%20127.9c3.6%203.6%207.8%205.4%2012.8%205.4s9.2-1.8%2012.8-5.4L287%2095c3.5-3.5%205.4-7.8%205.4-12.8%200-5-1.9-9.2-5.5-12.8z%22%2F%3E%3C%2Fsvg%3E')] dark:bg-[url('data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22292.4%22%20height%3D%22292.4%22%3E%3Cpath%20fill%3D%22%23CBD5E1%22%20d%3D%22M287%2069.4a17.6%2017.6%200%200%200-13-5.4H18.4c-5%200-9.3%201.8-12.9%205.4A17.6%2017.6%200%200%200%200%2082.2c0%205%201.8%209.3%205.4%2012.9l128%20127.9c3.6%203.6%207.8%205.4%2012.8%205.4s9.2-1.8%2012.8-5.4L287%2095c3.5-3.5%205.4-7.8%205.4-12.8%200-5-1.9-9.2-5.5-12.8z%22%2F%3E%3C%2Fsvg%3E')] bg-[length:10px_10px] bg-no-repeat bg-[position:right_1rem_center]"
               >
                 <option value="High">High</option>
                 <option value="Medium">Medium</option>
@@ -168,7 +168,7 @@ export default function ApplicationForm({ isOpen, onClose, onSubmit, initialData
               value={formData.notes || ""}
               onChange={handleChange}
               rows={3}
-              className="w-full rounded-xl border border-border bg-background px-4 py-2.5 text-sm font-medium text-text-primary transition-all duration-200 hover:border-primary/30 focus:border-primary focus:bg-card focus:outline-none focus:ring-4 focus:ring-primary/10 shadow-sm resize-none"
+              className="w-full rounded-xl border border-border bg-background dark:bg-slate-800 px-4 py-2.5 text-sm font-medium text-text-primary transition-all duration-200 hover:border-primary/30 focus:border-primary focus:bg-card dark:focus:bg-slate-900 focus:outline-none focus:ring-4 focus:ring-primary/20 shadow-sm resize-none"
               placeholder="Any additional details..."
             />
           </div>
@@ -177,13 +177,13 @@ export default function ApplicationForm({ isOpen, onClose, onSubmit, initialData
             <button
               type="button"
               onClick={onClose}
-              className="rounded-xl px-5 py-2.5 text-sm font-semibold text-text-secondary hover:bg-slate-100 dark:hover:bg-slate-800 hover:text-text-primary transition-colors"
+              className="rounded-xl px-5 py-2.5 text-sm font-semibold text-text-secondary hover:bg-slate-100 dark:hover:bg-slate-700 hover:text-text-primary transition-colors"
             >
               Cancel
             </button>
             <button
               type="submit"
-              className="rounded-xl bg-primary px-6 py-2.5 text-sm font-semibold text-white shadow-sm transition-all duration-200 hover:-translate-y-0.5 hover:shadow-premium hover:bg-primary-hover active:scale-95"
+              className="rounded-xl bg-primary dark:bg-slate-700 px-6 py-2.5 text-sm font-semibold text-white shadow-sm transition-all duration-200 hover:-translate-y-0.5 hover:shadow-premium hover:bg-primary-hover dark:hover:bg-slate-600 active:scale-95"
             >
               {initialData ? "Save Changes" : "Add Application"}
             </button>

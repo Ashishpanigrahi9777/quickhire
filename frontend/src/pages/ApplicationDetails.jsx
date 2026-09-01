@@ -88,7 +88,7 @@ export default function ApplicationDetails() {
             Back to Applications
           </button>
 
-          <div className="rounded-3xl border border-border/60 bg-card/70 dark:bg-card/90 p-6 md:p-8 shadow-sm backdrop-blur-xl">
+          <div className="rounded-3xl border border-border/60 dark:border-border/70 bg-card/70 dark:bg-slate-800 p-6 md:p-8 shadow-sm backdrop-blur-xl">
             <div className="flex flex-col md:flex-row md:items-start justify-between gap-6">
               <div>
                 <h1 className="text-3xl font-bold tracking-tight text-text-primary mb-2">{app.company}</h1>
@@ -96,9 +96,9 @@ export default function ApplicationDetails() {
                 <div className="flex flex-wrap items-center gap-3">
                   <StatusBadge status={app.status} />
                   <span className={`inline-flex items-center gap-1.5 rounded-full px-2.5 py-0.5 text-xs font-semibold uppercase tracking-widest ring-1 ring-inset shadow-sm ${
-                    app.priority === 'High' ? 'bg-red-50 text-red-700 ring-red-600/20 dark:bg-red-500/10 dark:text-red-400 dark:ring-red-500/20' :
-                    app.priority === 'Medium' ? 'bg-amber-50 text-amber-700 ring-amber-600/20 dark:bg-amber-500/10 dark:text-amber-400 dark:ring-amber-500/20' :
-                    'bg-slate-50 text-slate-700 ring-slate-600/20 dark:bg-slate-500/10 dark:text-slate-400 dark:ring-slate-500/20'
+                    app.priority === 'High' ? 'bg-red-50 text-red-700 ring-red-600/20 dark:bg-red-500/20 dark:text-red-300 dark:ring-red-500/30' :
+                    app.priority === 'Medium' ? 'bg-amber-50 text-amber-700 ring-amber-600/20 dark:bg-amber-500/20 dark:text-amber-300 dark:ring-amber-500/30' :
+                    'bg-slate-50 text-slate-700 ring-slate-600/20 dark:bg-slate-600/30 dark:text-slate-300 dark:ring-slate-500/30'
                   }`}>
                     <svg className={`h-1.5 w-1.5 ${
                       app.priority === 'High' ? 'fill-red-500 dark:fill-red-400' :
@@ -112,14 +112,14 @@ export default function ApplicationDetails() {
               <div className="flex items-center gap-3">
                 <button
                   onClick={() => setIsEditing(true)}
-                  className="inline-flex items-center gap-2 rounded-xl border border-border bg-card dark:bg-slate-800 px-4 py-2.5 text-sm font-semibold text-text-primary shadow-sm hover:bg-slate-50 dark:hover:bg-slate-700 hover:-translate-y-0.5 hover:shadow transition-all duration-200 active:scale-95"
+                  className="inline-flex items-center gap-2 rounded-xl border border-border bg-card dark:bg-slate-700 px-4 py-2.5 text-sm font-semibold text-text-primary shadow-sm hover:bg-slate-50 dark:hover:bg-slate-600 hover:-translate-y-0.5 hover:shadow transition-all duration-200 active:scale-95"
                 >
                   <Pencil size={16} />
                   Edit
                 </button>
                 <button
                   onClick={() => setIsDeleting(true)}
-                  className="inline-flex items-center gap-2 rounded-xl bg-red-50 dark:bg-red-500/10 text-red-600 dark:text-red-400 px-4 py-2.5 text-sm font-semibold hover:bg-red-100 dark:hover:bg-red-500/20 hover:-translate-y-0.5 transition-all duration-200 active:scale-95"
+                  className="inline-flex items-center gap-2 rounded-xl bg-red-50 dark:bg-red-500/20 text-red-600 dark:text-red-400 px-4 py-2.5 text-sm font-semibold hover:bg-red-100 dark:hover:bg-red-500/30 hover:-translate-y-0.5 transition-all duration-200 active:scale-95"
                 >
                   <Trash2 size={16} />
                   Delete
@@ -129,9 +129,9 @@ export default function ApplicationDetails() {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            <div className="rounded-2xl border border-border/60 bg-card/70 dark:bg-card/90 p-6 shadow-sm backdrop-blur-xl transition-transform hover:-translate-y-1 duration-300">
+            <div className="rounded-2xl border border-border/60 dark:border-border/70 bg-card/70 dark:bg-slate-800 p-6 shadow-sm backdrop-blur-xl transition-transform hover:-translate-y-1 duration-300">
               <div className="flex items-center gap-3 text-text-muted mb-3">
-                <div className="p-2 rounded-lg bg-slate-100 dark:bg-slate-800 text-slate-500 dark:text-slate-400">
+                <div className="p-2 rounded-lg bg-slate-100 dark:bg-slate-700 text-slate-500 dark:text-slate-400">
                   <MapPin size={18} />
                 </div>
                 <h3 className="font-semibold text-xs uppercase tracking-wider">Location</h3>
@@ -139,14 +139,89 @@ export default function ApplicationDetails() {
               <p className="text-text-primary font-medium text-lg">{app.location}</p>
             </div>
             
-            <div className="rounded-2xl border border-border/60 bg-card/70 dark:bg-card/90 p-6 shadow-sm backdrop-blur-xl transition-transform hover:-translate-y-1 duration-300">
+            <div className="rounded-2xl border border-border/60 dark:border-border/70 bg-card/70 dark:bg-slate-800 p-6 shadow-sm backdrop-blur-xl transition-transform hover:-translate-y-1 duration-300">
               <div className="flex items-center gap-3 text-text-muted mb-3">
-                <div className="p-2 rounded-lg bg-slate-100 dark:bg-slate-800 text-slate-500 dark:text-slate-400">
+                <div className="p-2 rounded-lg bg-slate-100 dark:bg-slate-700 text-slate-500 dark:text-slate-400">
                   <Calendar size={18} />
                 </div>
                 <h3 className="font-semibold text-xs uppercase tracking-wider">Applied Date</h3>
               </div>
               <p className="text-text-primary font-medium text-lg">{format(new Date(app.applied_date), "MMMM d, yyyy")}</p>
+            </div>
+
+            <div className="rounded-2xl border border-border/60 dark:border-border/70 bg-card/70 dark:bg-slate-800 p-6 shadow-sm backdrop-blur-xl transition-transform hover:-translate-y-1 duration-300">
+              <div className="flex items-center gap-3 text-text-muted mb-3">
+                <div className="p-2 rounded-lg bg-slate-100 dark:bg-slate-700 text-slate-500 dark:text-slate-400">
+                  <AlertCircle size={18} />
+                </div>
+                <h3 className="font-semibold text-xs uppercase tracking-wider">Priority</h3>
+              </div>
+              <p className="text-text-primary font-medium text-lg">{app.priority}</p>
+            </div>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div className="rounded-2xl border border-border/60 dark:border-border/70 bg-card/70 dark:bg-slate-800 p-6 md:p-8 shadow-sm backdrop-blur-xl">
+              <div className="flex items-center gap-3 text-text-secondary mb-6 border-b border-border/50 dark:border-border/40 pb-4">
+                <div className="p-2 rounded-lg bg-primary/5 dark:bg-slate-700/50 text-primary dark:text-slate-400">
+                  <FileText size={20} />
+                </div>
+                <h2 className="text-lg font-bold text-text-primary tracking-tight">Notes</h2>
+              </div>
+              {app.notes ? (
+                <p className="whitespace-pre-wrap text-text-secondary leading-relaxed text-sm">
+                  {app.notes}
+                </p>
+              ) : (
+                <div className="flex flex-col items-center justify-center h-32 text-center">
+                  <FileText size={32} className="text-slate-300 dark:text-slate-600 mb-3" />
+                  <p className="text-text-muted italic text-sm">No notes provided for this application.</p>
+                </div>
+              )}
+            </div>
+
+            <div className="rounded-2xl border border-border/60 dark:border-border/70 bg-card/70 dark:bg-slate-800 p-6 md:p-8 shadow-sm backdrop-blur-xl h-[400px] flex flex-col">
+              <div className="flex items-center gap-3 text-text-secondary mb-6 border-b border-border/50 dark:border-border/40 pb-4 shrink-0">
+                <div className="p-2 rounded-lg bg-primary/5 dark:bg-slate-700/50 text-primary dark:text-slate-400">
+                  <Clock size={20} />
+                </div>
+                <h2 className="text-lg font-bold text-text-primary tracking-tight">Application History</h2>
+              </div>
+              <div className="overflow-y-auto flex-1 pr-2">
+                {history.length > 0 ? (
+                  <div className="relative border-l-2 border-border/50 dark:border-border/40 ml-3 md:ml-4 space-y-8 pb-4">
+                    {history.map((event, index) => (
+                      <div key={event.id} className="relative pl-6 md:pl-8 group">
+                        {/* Dot */}
+                        <div className="absolute -left-[9px] top-1 h-4 w-4 rounded-full border-2 border-card dark:border-slate-800 bg-slate-300 dark:bg-slate-600 shadow-sm transition-colors group-hover:bg-primary dark:group-hover:bg-slate-500"></div>
+                        
+                        <div className="flex flex-col space-y-1">
+                          <time className="text-xs font-semibold tracking-wider text-text-muted uppercase">
+                            {format(new Date(event.changed_at), "MMM d, yyyy")}
+                          </time>
+                          <div className="text-sm text-text-primary bg-slate-50/50 dark:bg-slate-700/50 p-3 rounded-xl border border-border/50 dark:border-border/40 inline-block shadow-sm">
+                            {event.old_status ? (
+                              <>Changed to <span className="font-semibold text-primary dark:text-slate-300">{event.new_status}</span></>
+                            ) : (
+                              <>Created as <span className="font-semibold text-primary dark:text-slate-300">{event.new_status}</span></>
+                            )}
+                            {event.old_status && (
+                              <div className="text-xs text-text-muted mt-1">
+                                Previously: {event.old_status}
+                              </div>
+                            )}
+                          </div>
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                ) : (
+                  <div className="flex flex-col items-center justify-center h-full text-center pb-8">
+                    <Clock size={32} className="text-slate-300 dark:text-slate-600 mb-3" />
+                    <p className="text-text-muted italic text-sm">No history available.</p>
+                  </div>
+                )}
+              </div>
             </div>
 
             <div className="rounded-2xl border border-border/60 bg-card/70 dark:bg-card/90 p-6 shadow-sm backdrop-blur-xl transition-transform hover:-translate-y-1 duration-300">

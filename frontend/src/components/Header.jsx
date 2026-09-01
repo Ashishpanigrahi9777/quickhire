@@ -45,7 +45,7 @@ export default function Header({ title }) {
             placeholder="Search applications..."
             value={searchQuery}
             onChange={(e) => setSearchQuery(e.target.value)}
-            className="w-full pl-9 pr-4 py-1.5 rounded-full border border-border bg-slate-50/50 dark:bg-slate-800/50 text-sm font-medium text-text-primary transition-all duration-200 hover:border-primary/30 focus:border-primary focus:bg-white dark:focus:bg-slate-900 focus:outline-none focus:ring-4 focus:ring-primary/10 shadow-sm"
+            className="w-full pl-9 pr-4 py-1.5 rounded-full border border-border bg-slate-50/50 dark:bg-slate-800 text-sm font-medium text-text-primary placeholder-text-muted dark:placeholder-text-disabled transition-all duration-200 hover:border-primary/30 focus:border-primary focus:bg-white dark:focus:bg-slate-900 focus:outline-none focus:ring-4 focus:ring-primary/20 shadow-sm"
           />
         </form>
 
@@ -88,29 +88,29 @@ export default function Header({ title }) {
           {isDropdownOpen && (
             <>
               <div className="fixed inset-0 z-40" onClick={() => setIsDropdownOpen(false)}></div>
-              <div className="absolute right-0 mt-2 w-56 origin-top-right rounded-2xl bg-card border border-border/60 shadow-premium p-1.5 z-50 animate-in fade-in slide-in-from-top-2 duration-200">
-                <div className="px-3 py-2 border-b border-border/50 mb-1">
+              <div className="absolute right-0 mt-2 w-56 origin-top-right rounded-2xl bg-card dark:bg-slate-800 border border-border dark:border-border/70 shadow-premium p-1.5 z-50 animate-in fade-in slide-in-from-top-2 duration-200">
+                <div className="px-3 py-2 border-b border-border/50 dark:border-border/40 mb-1">
                   <p className="text-sm font-semibold text-text-primary truncate">{user?.name}</p>
                   <p className="text-xs text-text-secondary truncate">{user?.email}</p>
                 </div>
                 
-                <button className="w-full flex items-center gap-2 px-3 py-2 text-sm font-medium text-text-secondary hover:text-primary hover:bg-slate-50 dark:hover:bg-slate-800/50 rounded-lg transition-colors duration-200">
+                <button className="w-full flex items-center gap-2 px-3 py-2 text-sm font-medium text-text-secondary hover:text-primary hover:bg-slate-50 dark:hover:bg-slate-700 rounded-lg transition-colors duration-200">
                   <User size={16} />
                   Profile
                 </button>
-                <button className="w-full flex items-center gap-2 px-3 py-2 text-sm font-medium text-text-secondary hover:text-primary hover:bg-slate-50 dark:hover:bg-slate-800/50 rounded-lg transition-colors duration-200">
+                <button className="w-full flex items-center gap-2 px-3 py-2 text-sm font-medium text-text-secondary hover:text-primary hover:bg-slate-50 dark:hover:bg-slate-700 rounded-lg transition-colors duration-200">
                   <Settings size={16} />
                   Settings
                 </button>
                 
-                <div className="h-px bg-border/50 my-1"></div>
+                <div className="h-px bg-border/50 dark:bg-border/40 my-1"></div>
                 
                 <button 
                   onClick={() => {
                     setIsDropdownOpen(false);
                     logout();
                   }}
-                  className="w-full flex items-center gap-2 px-3 py-2 text-sm font-medium text-red-600 hover:bg-red-50 dark:hover:bg-red-500/10 rounded-lg transition-colors duration-200"
+                  className="w-full flex items-center gap-2 px-3 py-2 text-sm font-medium text-red-600 dark:text-red-400 hover:bg-red-50 dark:hover:bg-red-500/20 rounded-lg transition-colors duration-200"
                 >
                   <LogOut size={16} />
                   Log out

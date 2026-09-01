@@ -70,7 +70,7 @@ export default function Signup() {
               id="name"
               type="text"
               required
-              className="w-full rounded-xl border border-border bg-background px-4 py-3 text-sm font-medium text-text-primary transition-all duration-200 hover:border-primary/30 focus:border-primary focus:bg-card focus:outline-none focus:ring-4 focus:ring-primary/10 shadow-sm"
+              className="w-full rounded-xl border border-border bg-background dark:bg-slate-800 px-4 py-3 text-sm font-medium text-text-primary placeholder-text-muted dark:placeholder-text-disabled transition-all duration-200 hover:border-primary/30 focus:border-primary focus:bg-card dark:focus:bg-slate-900 focus:outline-none focus:ring-4 focus:ring-primary/20 shadow-sm"
               placeholder="John Doe"
               value={formData.name}
               onChange={handleChange}
@@ -85,7 +85,7 @@ export default function Signup() {
               id="email"
               type="email"
               required
-              className="w-full rounded-xl border border-border bg-background px-4 py-3 text-sm font-medium text-text-primary transition-all duration-200 hover:border-primary/30 focus:border-primary focus:bg-card focus:outline-none focus:ring-4 focus:ring-primary/10 shadow-sm"
+              className="w-full rounded-xl border border-border bg-background dark:bg-slate-800 px-4 py-3 text-sm font-medium text-text-primary placeholder-text-muted dark:placeholder-text-disabled transition-all duration-200 hover:border-primary/30 focus:border-primary focus:bg-card dark:focus:bg-slate-900 focus:outline-none focus:ring-4 focus:ring-primary/20 shadow-sm"
               placeholder="you@example.com"
               value={formData.email}
               onChange={handleChange}
@@ -101,7 +101,7 @@ export default function Signup() {
                 id="password"
                 type={showPassword ? "text" : "password"}
                 required
-                className="w-full rounded-xl border border-border bg-background pl-4 pr-10 py-3 text-sm font-medium text-text-primary transition-all duration-200 hover:border-primary/30 focus:border-primary focus:bg-card focus:outline-none focus:ring-4 focus:ring-primary/10 shadow-sm"
+                className="w-full rounded-xl border border-border bg-background dark:bg-slate-800 pl-4 pr-10 py-3 text-sm font-medium text-text-primary placeholder-text-muted dark:placeholder-text-disabled transition-all duration-200 hover:border-primary/30 focus:border-primary focus:bg-card dark:focus:bg-slate-900 focus:outline-none focus:ring-4 focus:ring-primary/20 shadow-sm"
                 placeholder="••••••••"
                 value={formData.password}
                 onChange={handleChange}
@@ -126,7 +126,7 @@ export default function Signup() {
                 id="confirmPassword"
                 type={showPassword ? "text" : "password"}
                 required
-                className="w-full rounded-xl border border-border bg-background pl-4 pr-10 py-3 text-sm font-medium text-text-primary transition-all duration-200 hover:border-primary/30 focus:border-primary focus:bg-card focus:outline-none focus:ring-4 focus:ring-primary/10 shadow-sm"
+                className="w-full rounded-xl border border-border bg-background dark:bg-slate-800 pl-4 pr-10 py-3 text-sm font-medium text-text-primary placeholder-text-muted dark:placeholder-text-disabled transition-all duration-200 hover:border-primary/30 focus:border-primary focus:bg-card dark:focus:bg-slate-900 focus:outline-none focus:ring-4 focus:ring-primary/20 shadow-sm"
                 placeholder="••••••••"
                 value={formData.confirmPassword}
                 onChange={handleChange}

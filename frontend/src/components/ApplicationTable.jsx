@@ -5,10 +5,10 @@ import StatusBadge from "./StatusBadge";
 
 export default function ApplicationTable({ applications, onEdit, onDelete }) {
   return (
-    <div className="overflow-hidden rounded-2xl border border-border/60 bg-card/70 dark:bg-card/90 backdrop-blur-xl shadow-glass transition-colors">
+    <div className="overflow-hidden rounded-2xl border border-border bg-card dark:bg-slate-800 dark:border-border/70 backdrop-blur-xl shadow-glass transition-colors">
       <div className="overflow-x-auto">
         <table className="w-full text-left text-sm whitespace-nowrap">
-          <thead className="border-b border-border bg-slate-50/50 dark:bg-slate-800/50 text-text-muted text-xs uppercase tracking-wider">
+          <thead className="border-b border-border bg-slate-50/50 dark:bg-slate-700/40 text-text-muted text-xs uppercase tracking-wider">
             <tr>
               <th className="px-6 py-4 font-semibold">Company</th>
               <th className="px-6 py-4 font-semibold">Position</th>
@@ -23,7 +23,7 @@ export default function ApplicationTable({ applications, onEdit, onDelete }) {
             {applications.map((app) => (
               <tr
                 key={app.id}
-                className="group transition-all duration-300 hover:bg-slate-50/80 dark:hover:bg-slate-800/50 hover:shadow-[0_4px_20px_-10px_rgba(0,0,0,0.05)] dark:hover:shadow-[0_4px_20px_-10px_rgba(0,0,0,0.2)] relative"
+                className="group transition-all duration-300 hover:bg-slate-50/80 dark:hover:bg-slate-700/50 hover:shadow-[0_4px_20px_-10px_rgba(0,0,0,0.05)] dark:hover:shadow-[0_4px_20px_-10px_rgba(0,0,0,0.2)] relative"
               >
                 <td className="px-6 py-4">
                   <span className="font-semibold text-text-primary">{app.company}</span>
@@ -56,21 +56,21 @@ export default function ApplicationTable({ applications, onEdit, onDelete }) {
                   <div className="flex items-center justify-end gap-1 opacity-0 transition-opacity duration-300 group-hover:opacity-100">
                     <Link
                       to={`/applications/${app.id}`}
-                      className="rounded-md p-2 text-text-muted hover:bg-primary/5 hover:text-primary transition-all hover:scale-105 active:scale-95"
+                      className="rounded-md p-2 text-text-muted hover:bg-blue-100 dark:hover:bg-blue-500/30 hover:text-blue-600 dark:hover:text-blue-400 transition-all hover:scale-105 active:scale-95"
                       title="View Details"
                     >
                       <Eye size={16} />
                     </Link>
                     <button
                       onClick={() => onEdit(app)}
-                      className="rounded-md p-2 text-text-muted hover:bg-amber-50 hover:text-amber-600 transition-all hover:scale-105 active:scale-95"
+                      className="rounded-md p-2 text-text-muted hover:bg-amber-100 dark:hover:bg-amber-500/30 hover:text-amber-600 dark:hover:text-amber-400 transition-all hover:scale-105 active:scale-95"
                       title="Edit"
                     >
                       <Pencil size={16} />
                     </button>
                     <button
                       onClick={() => onDelete(app)}
-                      className="rounded-md p-2 text-text-muted hover:bg-red-50 hover:text-red-600 transition-all hover:scale-105 active:scale-95"
+                      className="rounded-md p-2 text-text-muted hover:bg-red-100 dark:hover:bg-red-500/30 hover:text-red-600 dark:hover:text-red-400 transition-all hover:scale-105 active:scale-95"
                       title="Delete"
                     >
                       <Trash2 size={16} />
